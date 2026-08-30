@@ -12,7 +12,6 @@ A modern Spotify-inspired mobile music streaming application built with Flutter 
 - ▶️ Play and pause music
 - ⏭️ Next and previous track
 - 🎚️ Music progress / seek bar
-- 🔊 Volume control
 - ❤️ Like / favorite songs
 - 📂 Playlist support
 - 🎨 Spotify-inspired dark UI
@@ -32,32 +31,32 @@ A modern Spotify-inspired mobile music streaming application built with Flutter 
 🚀 Getting Started
 Prerequisites
 
-Make sure you have the following installed:
+##  Make sure you have the following installed:
 
-Flutter SDK
-Dart SDK
-Android Studio or VS Code
-Android Emulator or a physical Android device
-Installation
+- Flutter SDK
+- Dart SDK
+- Android Studio or VS Code
+- Android Emulator or a physical Android device
+- Installation
 
-Clone the repository:
+## Clone the repository:
 
 git clone https://github.com/shirin1155/spotify_inspired_music_streaming_app.git
 
 
-Navigate to the project:
+## Navigate to the project:
 
 cd spotify_inspired_music_streaming_app
 
 
-Install dependencies:
+## Install dependencies:
 
-flutter pub get
+- flutter pub get
 
 
-Run the application:
+## Run the application:
 
-flutter run
+- flutter run
 
 
 
