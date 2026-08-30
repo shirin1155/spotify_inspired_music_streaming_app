@@ -58,8 +58,6 @@ const List<Song> songs = [
       recentlyPlayedStatusCode,
       trendingNowStatusCode,
       popMixStatusCode,
-      taylorStatusCode,
-      jFlaStatusCode,
       downloadedStatusCode,
     ],
   ),
@@ -121,9 +119,6 @@ const List<Song> songs = [
     statusCodes: [
       recentlyPlayedStatusCode,
       downloadedStatusCode,
-      podcastStatusCode,
-      taylorStatusCode,
-      jFlaStatusCode,
       drivingStatusCode,
     ],
   ),
@@ -138,9 +133,7 @@ const List<Song> songs = [
     statusCodes: [
       trendingNowStatusCode,
       workoutStatusCode,
-      jFlaStatusCode,
       favouriteStatusCode,
-      podcastStatusCode,
     ],
   ),
 
@@ -176,5 +169,186 @@ const List<Song> songs = [
       workoutStatusCode,
     ],
   ),
+   Song(
+    title: 'Let Me Down Slowly',
+    artist: 'J.Fla',
+    image: 'assets/images/let_me_down_jfla.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/Alec%20Benjamin%20-%20Let%20Me%20Down%20Slowly%20(%20cover%20by%20J.Fla%20).mp3',
+    description:
+        'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      jFlaStatusCode,
+    ],
+  ),
+
+ Song(
+    title: 'Let Me Love You & Faded (MASHUP)',
+    artist: 'J.Fla',
+    image: 'assets/images/let_me_love_faded.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/Jfla/Let%20Me%20Love%20You%20&%20Faded%20(%20MASHUP%20cover%20by%20J.Fla%20).mp3',
+    description:
+        'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      jFlaStatusCode,
+    ],
+  ),
+
+ Song(
+    title: 'Camila Cabello - Havana',
+    artist: 'J.Fla',
+    image: 'assets/images/camila_Cabello_Havana_jfla.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/Jfla/Camila%20Cabello%20-%20Havana%20(%20cover%20by%20J.Fla%20).mp3',
+    description:
+        'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      jFlaStatusCode,
+    ],
+  ),
+ 
+
+
+Song(
+    title: 'Cheap Thrills',
+    artist: 'J.Fla',
+    image: 'assets/images/cheap_thrills_jfla.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/Cheap%20Thrills%20Down%20(%20cover%20by%20J.Fla%20).mp3',
+    description:
+        'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      jFlaStatusCode,
+    ],
+  ),
+
+ Song(
+    title: 'Eminem - Love The Way You Lie',
+    artist: 'J.Fla',
+    image: 'assets/images/love_the_way_jfla.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/Jfla/Eminem%20-%20Love%20The%20Way%20You%20Lie%20ft.%20Rihanna%20(%20cover%20by%20J.Fla%20).mp3',
+    description:
+        'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      jFlaStatusCode,
+    ],
+  ),
+
+ Song(
+    title: 'Look What You Made Me Do',
+    artist: 'Taylor Swift',
+    image: 'assets/images/look_what_tailor.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/taylor/Taylor%20Swift%20-%20Look%20What%20You%20Made%20Me%20Do.mp3',
+    description:
+        'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      taylorStatusCode,
+    ],
+  ),
+
+ Song(
+    title: 'Blank Space',
+    artist: 'Taylor Swift',
+    image: 'assets/images/taylor_blank_space.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/taylor/Taylor%20Swift%20-%20Blank%20Space.mp3',
+    description:
+        'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      taylorStatusCode,
+    ],
+  ),
+ Song(
+    title: 'Love Story',
+    artist: 'Taylor Swift',
+    image: 'assets/images/taylor_love_story.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/taylor/Taylor%20Swift%20-%20Love%20Story.mp3',
+    description:
+        'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      taylorStatusCode,
+    ],
+  ),
+
+ Song(
+    title: 'Roar',
+    artist: 'Katy Perry',
+    image: 'assets/images/katy_roar.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/katy_perry/Katy%20Perry%20-%20Roar.mp3',
+    description:
+        'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      katyStatusCode,
+    ],
+  ),
+
+
+ Song(
+    title: 'Bon Appétit',
+    artist: 'Katy Perry',
+    image: 'assets/images/katy_bon.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/katy_perry/Katy%20Perry%20-%20Bon%20App%C3%A9tit%20(Official)%20ft.%20Migos.mp3',
+    description:
+        'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      katyStatusCode,
+    ],
+  ),
+ Song(
+    title: 'Unconditionally',
+    artist: 'Katy Perry',
+    image: 'assets/images/katy_unconditional.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/katy_perry/Katy%20Perry%20-%20Unconditionally%20(Official).mp3',
+    description:
+        'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      katyStatusCode,
+    ],
+  ),
+
+ Song(
+    title: 'All The Stars',
+    artist: 'SZA',
+    image: 'assets/images/all_the_star_sza.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/playlist/Kendrick%20Lamar,%20SZA%20-%20All%20The%20Stars.mp3',
+    description: 'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      topPicksStatusCode,
+      newReleaseStatusCode,
+      popularArtistStatusCode,
+      workoutStatusCode,
+    ],
+  ),
+
+  Song(
+    title: 'Another Love',
+    artist: 'Tom Odell',
+    image: 'assets/images/another_love.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/playlist/Tom%20Odell%20-%20Another%20Love%20(Official%20Video).mp3',
+    description: 'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [
+      recentlyPlayedStatusCode,
+      topPicksStatusCode,
+      favouriteStatusCode,
+      trendingNowStatusCode,
+      popMixStatusCode,
+      drivingStatusCode,
+    ],
+  ),
+
+  Song(
+    title: 'On The Floor',
+    artist: 'Jennifer Lopez, Pitbull',
+    image: 'assets/images/on_the_floor.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/playlist/Jennifer%20Lopez,%20Pitbull%20-%20On%20The%20Floor%20(Official%20Music%20Video).mp3',
+    description: 'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [popMixStatusCode],
+  ),
+
+  Song(
+    title: 'Change Your Brain',
+    artist: 'Dr. Andrew Huberman',
+    image: 'assets/images/change_your_brain.jpg',
+    audioUrl: 'https://github.com/shirin1155/music-app-tracks/raw/refs/heads/main/playlist/15%20Minutes%20of%20Podcasts%20That%20Beat%2015%20Self-Help%20Books.mp3',
+    description: 'A smooth and emotional track with soft vocals and a modern atmospheric sound.',
+    statusCodes: [podcastStatusCode],
+  ),
+
   // (podcast example entries removed — leaving `podcastStatusCode` constant only)
 ];
