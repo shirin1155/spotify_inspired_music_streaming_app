@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/responsive.dart';
+
 import '../models/song.dart';
 
 class SongDetailScreen extends StatelessWidget {
@@ -31,7 +33,6 @@ class SongDetailScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-
                     icon: const Icon(
                       Icons.arrow_back_ios_new,
                       color: Colors.white,
@@ -42,8 +43,7 @@ class SongDetailScreen extends StatelessWidget {
                     child: Center(
                       child: Text(
                         'About the Song',
-
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                         ),
@@ -55,7 +55,7 @@ class SongDetailScreen extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 65),
+              SizedBox(height: R.h(context, 65)),
 
               ClipRRect(
                 borderRadius:
@@ -64,12 +64,12 @@ class SongDetailScreen extends StatelessWidget {
                 child: Image.asset(
                   song.image,
                   width: double.infinity,
-                  height: 430,
+                  height: R.h(context, 430),
                   fit: BoxFit.cover,
                 ),
               ),
 
-              const SizedBox(height: 42),
+              SizedBox(height: R.h(context, 42)),
 
               Row(
                 crossAxisAlignment:
@@ -85,20 +85,20 @@ class SongDetailScreen extends StatelessWidget {
                         Text(
                           song.title,
 
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: Colors.white,
-                            fontSize: 31,
+                            fontSize: R.sp(context, 31),
                           ),
                         ),
 
-                        const SizedBox(height: 8),
+                        SizedBox(height: R.h(context, 8)),
 
                         Text(
                           song.artist,
 
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: Colors.white70,
-                            fontSize: 23,
+                            fontSize: R.sp(context, 23),
                           ),
                         ),
                       ],
@@ -113,14 +113,14 @@ class SongDetailScreen extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 45),
+              SizedBox(height: R.h(context, 45)),
 
               Text(
                 song.description,
 
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
-                  fontSize: 17,
+                  fontSize: R.sp(context, 17),
                   height: 1.55,
                   letterSpacing: 1.5,
                 ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../services/email_store.dart';
 import 'home_screen.dart';
+import '../utils/responsive.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({
@@ -124,43 +125,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: [
                 // Icon
                 Container(
-                  width: 58,
-                  height: 58,
+                  width: R.w(context, 58),
+                  height: R.w(context, 58),
                   decoration: BoxDecoration(
                     color: Colors.redAccent.withOpacity(0.12),
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.logout_rounded,
                     color: Colors.redAccent,
-                    size: 27,
+                    size: R.w(context, 27),
                   ),
                 ),
 
-                const SizedBox(height: 18),
+                SizedBox(height: R.h(context, 18)),
 
-                const Text(
+                Text(
                   'Log out?',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 21,
+                    fontSize: R.sp(context, 21),
                     fontWeight: FontWeight.w700,
                   ),
                 ),
 
-                const SizedBox(height: 8),
+                SizedBox(height: R.h(context, 8)),
 
-                const Text(
+                Text(
                   'Are you sure you want to log out from your account?',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white54,
-                    fontSize: 13,
+                    fontSize: R.sp(context, 13),
                     height: 1.5,
                   ),
                 ),
 
-                const SizedBox(height: 24),
+                SizedBox(height: R.h(context, 24)),
 
                 Row(
                   children: [
@@ -281,27 +282,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     Text(
                       title,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
 
-                    const SizedBox(height: 4),
+                    SizedBox(height: R.h(context, 4)),
 
                     Text(
                       subtitle,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        color: Colors.white38,
-                        fontSize: 12,
+                      style: TextStyle(
+                        color: Colors.white54,
+                        fontSize: R.sp(context, 13),
                       ),
                     ),
                   ],
                 ),
               ),
+
+              SizedBox(width: R.w(context, 10)),
 
               const SizedBox(width: 10),
 
@@ -658,32 +661,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           'Profile',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 32,
+                            fontSize: R.sp(context, 32),
                             fontWeight: FontWeight.w800,
                             letterSpacing: -0.5,
                           ),
                         ),
                         Container(
-                          width: 44,
-                          height: 44,
+                          width: R.w(context, 44),
+                          height: R.w(context, 44),
                           decoration: BoxDecoration(
                             color: const Color(0xFF202020),
                             borderRadius: BorderRadius.circular(14),
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.more_horiz_rounded,
                             color: Colors.white70,
-                            size: 25,
+                            size: R.w(context, 25),
                           ),
                         ),
                       ],
                     ),
 
-                    const SizedBox(height: 26),
+                    SizedBox(height: R.h(context, 26)),
 
                     Container(
                       width: double.infinity,
@@ -705,9 +708,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: Column(
                         children: [
                           Container(
-                            width: 118,
-                            height: 118,
-                            padding: const EdgeInsets.all(3),
+                            width: R.w(context, 118),
+                            height: R.w(context, 118),
+                            padding: EdgeInsets.all(R.w(context, 3)),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               gradient: const LinearGradient(
@@ -743,19 +746,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
 
-                          const SizedBox(height: 18),
+                          SizedBox(height: R.h(context, 18)),
 
                           Text(
                             profileName,
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: Colors.white,
-                              fontSize: 25,
+                              fontSize: R.sp(context, 25),
                               fontWeight: FontWeight.w800,
                               letterSpacing: 1.5,
                             ),
                           ),
 
-                          const SizedBox(height: 7),
+                          SizedBox(height: R.h(context, 7)),
 
                           Container(
                             padding: const EdgeInsets.symmetric(
@@ -766,18 +769,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               color: const Color(0xFF1ED760).withOpacity(0.10),
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            child: const Text(
+                            child: Text(
                               'PREMIUM MEMBER',
                               style: TextStyle(
                                 color: Color(0xFF1ED760),
-                                fontSize: 11,
+                                fontSize: R.sp(context, 11),
                                 fontWeight: FontWeight.w700,
                                 letterSpacing: 1,
                               ),
                             ),
                           ),
 
-                          const SizedBox(height: 18),
+                          SizedBox(height: R.h(context, 18)),
 
                           Material(
                             color: Colors.transparent,
@@ -798,22 +801,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     color: Colors.white.withOpacity(0.08),
                                   ),
                                 ),
-                                child: const Row(
+                                child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
                                       'View profile',
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 14,
+                                        fontSize: R.sp(context, 14),
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
-                                    SizedBox(width: 7),
+                                    SizedBox(width: R.w(context, 7)),
                                     Icon(
                                       Icons.arrow_forward_rounded,
                                       color: Colors.white,
-                                      size: 17,
+                                      size: R.w(context, 17),
                                     ),
                                   ],
                                 ),
@@ -824,18 +827,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
 
-                    const SizedBox(height: 30),
+                    SizedBox(height: R.h(context, 30)),
 
-                    const Text(
+                    Text(
                       'Settings',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 22,
+                        fontSize: R.sp(context, 22),
                         fontWeight: FontWeight.w700,
                       ),
                     ),
 
-                    const SizedBox(height: 14),
+                    SizedBox(height: R.h(context, 14)),
 
                     _buildSettingTile(
                       icon: Icons.person_outline_rounded,
@@ -846,7 +849,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       },
                     ),
 
-                    const SizedBox(height: 10),
+                    SizedBox(height: R.h(context, 10)),
 
                     _buildSettingTile(
                       icon: Icons.headphones_rounded,
@@ -857,11 +860,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       },
                     ),
 
-                    const SizedBox(height: 10),
+                    SizedBox(height: R.h(context, 10)),
 
                     _buildDataSaverTile(),
 
-                    const SizedBox(height: 10),
+                    SizedBox(height: R.h(context, 10)),
 
                     _buildSettingTile(
                       icon: Icons.notifications_none_rounded,
@@ -872,7 +875,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       },
                     ),
 
-                    const SizedBox(height: 10),
+                    SizedBox(height: R.h(context, 10)),
 
                     _buildSettingTile(
                       icon: Icons.info_outline_rounded,
@@ -883,7 +886,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       },
                     ),
 
-                    const SizedBox(height: 28),
+                    SizedBox(height: R.h(context, 28)),
 
                     Material(
                       color: Colors.transparent,
@@ -927,7 +930,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
 
-                    const SizedBox(height: 20),
+                    SizedBox(height: R.h(context, 20)),
 
                     Center(
                       child: Text(

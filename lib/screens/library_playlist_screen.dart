@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/song_data.dart';
+import '../utils/responsive.dart';
 import '../models/song.dart';
 import 'player_screen.dart';
 
@@ -327,6 +328,7 @@ class _LibraryPlaylistScreenState extends State<LibraryPlaylistScreen> {
   // FILTER CHIP
   // =========================================================
 
+  // ignore: unused_element
   Widget _buildFilterChip({
     required String title,
     required int index,
@@ -385,20 +387,20 @@ class _LibraryPlaylistScreenState extends State<LibraryPlaylistScreen> {
       child: isSearching
           ? Container(
               key: const ValueKey('search'),
-              height: 50,
+              height: R.h(context, 50),
               decoration: BoxDecoration(
                 color: const Color(0xFF292929),
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Row(
                 children: [
-                  const SizedBox(width: 14),
-                  const Icon(
+                  SizedBox(width: R.w(context, 14)),
+                  Icon(
                     Icons.search_rounded,
                     color: Colors.white54,
-                    size: 22,
+                    size: R.w(context, 22),
                   ),
-                  const SizedBox(width: 10),
+                  SizedBox(width: R.w(context, 10)),
                   Expanded(
                     child: TextField(
                       controller: searchController,
@@ -408,9 +410,9 @@ class _LibraryPlaylistScreenState extends State<LibraryPlaylistScreen> {
                           searchText = value;
                         });
                       },
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
-                        fontSize: 15,
+                        fontSize: R.sp(context, 15),
                       ),
                       cursorColor: const Color(0xFF1ED760),
                       decoration: const InputDecoration(
@@ -443,24 +445,24 @@ class _LibraryPlaylistScreenState extends State<LibraryPlaylistScreen> {
               children: [
                 IconButton(
                   onPressed: () => Navigator.maybePop(context),
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_back_ios_new_rounded,
                     color: Colors.white,
-                    size: 22,
+                    size: R.w(context, 22),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     widget.title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24,
+                      fontSize: R.sp(context, 24),
                       fontWeight: FontWeight.w700,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                const SizedBox(width: 8),
+                SizedBox(width: R.w(context, 8)),
                 Material(
                   color: Colors.transparent,
                   child: InkWell(
@@ -471,16 +473,16 @@ class _LibraryPlaylistScreenState extends State<LibraryPlaylistScreen> {
                     },
                     borderRadius: BorderRadius.circular(14),
                     child: Container(
-                      width: 44,
-                      height: 44,
+                      width: R.w(context, 44),
+                      height: R.w(context, 44),
                       decoration: BoxDecoration(
                         color: const Color(0xFF202020),
                         borderRadius: BorderRadius.circular(14),
                       ),
-                      child: const Icon(
+                      child: Icon(
                         Icons.search_rounded,
                         color: Colors.white,
-                        size: 23,
+                        size: R.w(context, 23),
                       ),
                     ),
                   ),
@@ -555,14 +557,14 @@ class _LibraryPlaylistScreenState extends State<LibraryPlaylistScreen> {
                           BorderRadius.circular(13),
                       child: Image.asset(
                         song.image,
-                        width: 70,
-                        height: 70,
+                        width: R.w(context, 70),
+                        height: R.w(context, 70),
                         fit: BoxFit.cover,
                         errorBuilder:
                             (context, error, stackTrace) {
                           return Container(
-                            width: 70,
-                            height: 70,
+                            width: R.w(context, 70),
+                            height: R.w(context, 70),
                             color:
                                 const Color(0xFF292929),
                             child: const Icon(
@@ -597,7 +599,7 @@ class _LibraryPlaylistScreenState extends State<LibraryPlaylistScreen> {
                   ],
                 ),
 
-                const SizedBox(width: 14),
+                SizedBox(width: R.w(context, 14)),
 
                 // =================================================
                 // SONG INFORMATION
@@ -613,15 +615,15 @@ class _LibraryPlaylistScreenState extends State<LibraryPlaylistScreen> {
                         maxLines: 1,
                         overflow:
                             TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight:
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: R.sp(context, 16),
+                            fontWeight:
                               FontWeight.w600,
-                        ),
+                          ),
                       ),
 
-                      const SizedBox(height: 7),
+                      SizedBox(height: R.h(context, 7)),
 
                       Row(
                         children: [

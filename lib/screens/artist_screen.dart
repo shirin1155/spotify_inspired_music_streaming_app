@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
+
+import '../utils/responsive.dart';
 
 import '../data/song_data.dart';
 import '../models/song.dart';
@@ -68,7 +71,7 @@ class _ArtistPageState extends State<ArtistPage> {
 
   Widget _buildHeader() {
     return SliverAppBar(
-      expandedHeight: 535,
+      expandedHeight: math.min(R.h(context, 535), MediaQuery.of(context).size.height * 0.6),
       pinned: true,
       backgroundColor: const Color(0xff0d0d0d),
       elevation: 0,
@@ -102,8 +105,8 @@ class _ArtistPageState extends State<ArtistPage> {
                 Hero(
                   tag: widget.artistImage,
                   child: Container(
-                    width: 285,
-                    height: 285,
+                    width: math.min(R.w(context, 285), MediaQuery.of(context).size.width * 0.7),
+                    height: math.min(R.w(context, 285), MediaQuery.of(context).size.width * 0.7),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       boxShadow: [
@@ -133,7 +136,7 @@ class _ArtistPageState extends State<ArtistPage> {
                   ),
                 ),
 
-                const SizedBox(height: 25),
+                SizedBox(height: R.h(context, 25)),
 
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -150,15 +153,15 @@ class _ArtistPageState extends State<ArtistPage> {
                                   widget.artistName,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 34,
+                                    fontSize: R.sp(context, 34),
                                     fontWeight: FontWeight.w800,
                                     letterSpacing: -1,
                                   ),
                                 ),
                               ),
-                              const SizedBox(width: 7),
+                              SizedBox(width: R.w(context, 7)),
                               const Icon(
                                 Icons.verified_rounded,
                                 color: Color(0xff5e9eff),
@@ -166,25 +169,25 @@ class _ArtistPageState extends State<ArtistPage> {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 6),
+                          SizedBox(height: R.h(context, 6)),
                           Text(
                             widget.monthlyListeners,
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: Color(0xffa3a3a3),
-                              fontSize: 15.5,
+                              fontSize: R.sp(context, 15.5),
                             ),
                           ),
                         ],
                       ),
                     ),
 
-                    const SizedBox(width: 12),
+                    SizedBox(width: R.w(context, 12)),
 
                     _followButton(),
                   ],
                 ),
 
-                const SizedBox(height: 15),
+                SizedBox(height: R.h(context, 15)),
 
                 Row(
                   children: [
@@ -192,7 +195,7 @@ class _ArtistPageState extends State<ArtistPage> {
                       icon: Icons.favorite_border_rounded,
                       onTap: () {},
                     ),
-                    const SizedBox(width: 4),
+                    SizedBox(width: R.w(context, 4)),
                     _roundAction(
                       icon: Icons.share_outlined,
                       onTap: () {},
@@ -241,7 +244,7 @@ class _ArtistPageState extends State<ArtistPage> {
             color: isFollowing
                 ? Colors.black
                 : Colors.white,
-            fontSize: 14,
+            fontSize: R.sp(context, 14),
             fontWeight: FontWeight.w700,
           ),
         ),
@@ -264,11 +267,11 @@ class _ArtistPageState extends State<ArtistPage> {
         ),
         child: Row(
           children: [
-            const Text(
+            Text(
               'Popular',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 22,
+                fontSize: R.sp(context, 22),
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -285,7 +288,7 @@ class _ArtistPageState extends State<ArtistPage> {
               ),
             ),
 
-            const SizedBox(width: 5),
+            SizedBox(width: R.w(context, 5)),
 
             // Play button
             Container(
@@ -365,28 +368,28 @@ class _ArtistPageState extends State<ArtistPage> {
                     : Text(
                         '${index + 1}',
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Color(0xff9a9a9a),
-                          fontSize: 17,
+                          fontSize: R.sp(context, 17),
                           fontWeight: FontWeight.w600,
                         ),
                       ),
               ),
 
-              const SizedBox(width: 8),
+              SizedBox(width: R.w(context, 8)),
 
               // Song cover (use asset images)
               ClipRRect(
                 borderRadius: BorderRadius.circular(7),
                 child: Image.asset(
                   song.image,
-                  width: 84,
-                  height: 84,
+                  width: R.w(context, 84),
+                  height: R.h(context, 84),
                   fit: BoxFit.cover,
                   errorBuilder: (_, __, ___) {
                     return Container(
-                      width: 84,
-                      height: 84,
+                      width: R.w(context, 84),
+                      height: R.h(context, 84),
                       color: const Color(0xff242424),
                       child: const Icon(
                         Icons.music_note_rounded,
@@ -397,7 +400,7 @@ class _ArtistPageState extends State<ArtistPage> {
                 ),
               ),
 
-              const SizedBox(width: 15),
+              SizedBox(width: R.w(context, 15)),
 
               Expanded(
                 child: Column(
@@ -412,16 +415,16 @@ class _ArtistPageState extends State<ArtistPage> {
                         color: active
                             ? const Color(0xffc8ff3d)
                             : Colors.white,
-                        fontSize: 17,
+                        fontSize: R.sp(context, 17),
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    const SizedBox(height: 7),
+                    SizedBox(height: R.h(context, 7)),
                     Text(
                       song.artist,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Color(0xff969696),
-                        fontSize: 14.5,
+                        fontSize: R.sp(context, 14.5),
                       ),
                     ),
                   ],
@@ -454,7 +457,7 @@ class _ArtistPageState extends State<ArtistPage> {
     final song = list[selectedSong!];
 
     return Container(
-      height: 67,
+      height: R.h(context, 67),
       decoration: BoxDecoration(
         color: const Color(0xff252525),
         borderRadius: BorderRadius.circular(14),
@@ -474,13 +477,13 @@ class _ArtistPageState extends State<ArtistPage> {
             ),
             child: Image.asset(
               song.image,
-              width: 67,
-              height: 67,
+              width: R.w(context, 67),
+              height: R.h(context, 67),
               fit: BoxFit.cover,
             ),
           ),
 
-          const SizedBox(width: 12),
+          SizedBox(width: R.w(context, 12)),
 
           Expanded(
             child: Column(
@@ -492,18 +495,18 @@ class _ArtistPageState extends State<ArtistPage> {
                   song.title,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 14.5,
+                    fontSize: R.sp(context, 14.5),
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                const SizedBox(height: 3),
+                SizedBox(height: R.h(context, 3)),
                 Text(
                   widget.artistName,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white54,
-                    fontSize: 12,
+                    fontSize: R.sp(context, 12),
                   ),
                 ),
               ],
@@ -539,7 +542,7 @@ class _ArtistPageState extends State<ArtistPage> {
       right: 0,
       bottom: 0,
       child: Container(
-        height: 76,
+        height: R.h(context, 76),
         decoration: BoxDecoration(
           color: const Color(0xff111111),
           border: Border(
@@ -606,14 +609,14 @@ class _ArtistPageState extends State<ArtistPage> {
                 ? const Color(0xffc8ff3d)
                 : Colors.white54,
           ),
-          const SizedBox(height: 4),
+          SizedBox(height: R.h(context, 4)),
           Text(
             label,
             style: TextStyle(
               color: active
                   ? Colors.white
                   : Colors.white54,
-              fontSize: 11,
+              fontSize: R.sp(context, 11),
             ),
           ),
         ],

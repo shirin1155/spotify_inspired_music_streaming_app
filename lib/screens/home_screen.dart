@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../utils/responsive.dart';
+
 import '../data/song_data.dart';
 import '../models/song.dart';
-import '../services/audio_player_service.dart';
+// removed unused import
 import 'library_screen.dart';
 import 'player_screen.dart';
 import 'profile_screen.dart';
@@ -120,8 +122,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.pushNamed(context, '/profile');
                       },
                       child: Container(
-                        width: 58,
-                        height: 58,
+                        width: R.w(context, 58),
+                        height: R.w(context, 58),
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: Color(0xFF333333),
@@ -141,51 +143,28 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 16),
-                    _buildFilterButton(title: 'All', index: 0),
-                    const SizedBox(width: 12),
-                    _buildFilterButton(title: 'Music', index: 1),
-                    const SizedBox(width: 12),
-                    _buildFilterButton(title: 'Podcasts', index: 2),
-                    const Spacer(),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/profile');
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 8,
-                        ),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF1ED760),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Row(
-                          mainAxisSize: MainAxisSize.min,
+                    SizedBox(width: R.w(context, 16)),
+                    // Make the filter buttons scrollable so they don't overflow
+                    Expanded(
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        physics: const BouncingScrollPhysics(),
+                        child: Row(
                           children: [
-                            Icon(
-                              Icons.workspace_premium_rounded,
-                              size: 16,
-                              color: Colors.black,
-                            ),
-                            SizedBox(width: 6),
-                            Text(
-                              'Premium',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
+                            _buildFilterButton(title: 'All', index: 0),
+                            SizedBox(width: R.w(context, 12)),
+                            _buildFilterButton(title: 'Music', index: 1),
+                            SizedBox(width: R.w(context, 12)),
+                            _buildFilterButton(title: 'Podcasts', index: 2),
                           ],
                         ),
                       ),
                     ),
+                    SizedBox(width: R.w(context, 12)),
                   ],
                 ),
 
-                const SizedBox(height: 12),
+                SizedBox(height: R.h(context, 12)),
                 // Search field
                 Container(
                   margin: const EdgeInsets.only(top: 8, bottom: 12),
@@ -210,20 +189,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 // If Music filter selected, show the original home layout.
                 if (selectedFilter == 1) ...[
-                  const SizedBox(height: 32),
-                  const Text(
+                  SizedBox(height: R.h(context, 32)),
+                  Text(
                     'Recently Played',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 28,
+                      fontSize: R.sp(context, 28),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
 
-                  const SizedBox(height: 20),
+                  SizedBox(height: R.h(context, 20)),
 
                   SizedBox(
-                    height: 290,
+                    height: R.h(context, 290),
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       itemCount: recently.length,
@@ -234,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         return GestureDetector(
                           onTap: () => openSong(song),
                           child: SizedBox(
-                            width: 190,
+                            width: R.w(context, 190),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -242,30 +221,30 @@ class _HomeScreenState extends State<HomeScreen> {
                                   borderRadius: BorderRadius.circular(14),
                                   child: Image.asset(
                                     song.image,
-                                    width: 190,
-                                    height: 190,
+                                    width: R.w(context, 190),
+                                    height: R.w(context, 190),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
-                                const SizedBox(height: 12),
+                                SizedBox(height: R.h(context, 12)),
                                 Text(
                                   song.title,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 18,
+                                    fontSize: R.sp(context, 18),
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                const SizedBox(height: 5),
+                                SizedBox(height: R.h(context, 5)),
                                 Text(
                                   song.artist,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     color: Colors.white60,
-                                    fontSize: 14,
+                                    fontSize: R.sp(context, 14),
                                   ),
                                 ),
                               ],
@@ -276,18 +255,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
 
-                  const SizedBox(height: 38),
+                  SizedBox(height: R.h(context, 38)),
 
-                  const Text(
+                  Text(
                     'Trending now',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 28,
+                      fontSize: R.sp(context, 28),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
 
-                  const SizedBox(height: 20),
+                  SizedBox(height: R.h(context, 20)),
 
                   GridView.builder(
                     shrinkWrap: true,
@@ -312,52 +291,52 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Image.asset(
                                 song.image,
                                 width: double.infinity,
-                                height: 170,
+                                height: R.w(context, 170),
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            const SizedBox(height: 12),
-                            Text(
-                              song.title,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            const SizedBox(height: 5),
-                            Text(
-                              song.artist,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
-                                color: Colors.white60,
-                                fontSize: 14,
-                              ),
-                            ),
+                                SizedBox(height: R.h(context, 12)),
+                                Text(
+                                  song.title,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: R.sp(context, 18),
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                SizedBox(height: R.h(context, 5)),
+                                Text(
+                                  song.artist,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: Colors.white60,
+                                    fontSize: R.sp(context, 14),
+                                  ),
+                                ),
                           ],
                         ),
                       );
                     },
                   ),
 
-                  const SizedBox(height: 38),
+                  SizedBox(height: R.h(context, 38)),
 
-                  const Text(
+                  Text(
                     'Top picks for you',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 28,
+                      fontSize: R.sp(context, 28),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
 
-                  const SizedBox(height: 20),
+                  SizedBox(height: R.h(context, 20)),
 
                   SizedBox(
-                    height: 285,
+                    height: R.h(context, 285),
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       itemCount: topPicks.length,
@@ -368,7 +347,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         return GestureDetector(
                           onTap: () => openSong(song),
                           child: SizedBox(
-                            width: 190,
+                            width: R.w(context, 190),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -376,30 +355,30 @@ class _HomeScreenState extends State<HomeScreen> {
                                   borderRadius: BorderRadius.circular(14),
                                   child: Image.asset(
                                     song.image,
-                                    width: 190,
-                                    height: 190,
+                                    width: R.w(context, 190),
+                                    height: R.w(context, 190),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
-                                const SizedBox(height: 12),
+                                SizedBox(height: R.h(context, 12)),
                                 Text(
                                   song.title,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 18,
+                                    fontSize: R.sp(context, 18),
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                const SizedBox(height: 5),
+                                SizedBox(height: R.h(context, 5)),
                                 Text(
                                   song.artist,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     color: Colors.white60,
-                                    fontSize: 14,
+                                    fontSize: R.sp(context, 14),
                                   ),
                                 ),
                               ],

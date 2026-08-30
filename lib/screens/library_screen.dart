@@ -45,6 +45,15 @@ class _LibraryScreenState extends State<LibraryScreen> {
               sliver: SliverList(
                 delegate: SliverChildListDelegate([
                   const SizedBox(height: 20),
+                  const Text(
+                    'Playlists',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
                   _buildLibraryItem(
                     icon: Icons.favorite_rounded,
                     iconBackground: const LinearGradient(

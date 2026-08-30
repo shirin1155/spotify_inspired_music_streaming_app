@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../services/email_store.dart';
+import '../utils/responsive.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -107,19 +108,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // =====================================================
-                    // HEADER
-                    // =====================================================
+                      // =====================================================
+                      // HEADER
 
                     SizedBox(
-                      height: 64,
+                      height: R.h(context, 64),
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: GestureDetector(
                           onTap: () => Navigator.pop(context),
                           child: Container(
-                            width: 46,
-                            height: 46,
+                            width: R.w(context, 46),
+                            height: R.w(context, 46),
                             decoration: BoxDecoration(
                               color: Colors.white.withOpacity(0.05),
                               shape: BoxShape.circle,
@@ -134,7 +134,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
 
-                    const SizedBox(height: 30),
+                    SizedBox(height: R.h(context, 30)),
 
                     // =====================================================
                     // TITLE
@@ -145,27 +145,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         children: [
                           _titleText(
                             'Sign up to',
-                            fontSize: 28,
+                            fontSize: R.sp(context, 28),
                           ),
 
-                          const SizedBox(height: 8),
+                          SizedBox(height: R.h(context, 8)),
 
                           _titleText(
                             'start listening',
-                            fontSize: 28,
+                            fontSize: R.sp(context, 28),
                           ),
                         ],
                       ),
                     ),
 
-                    const SizedBox(height: 60),
+                    SizedBox(height: R.h(context, 60)),
 
                     _sectionTitle('Your name'),
 
-                    const SizedBox(height: 16),
+                    SizedBox(height: R.h(context, 16)),
 
                     Container(
-                      height: 64,
+                      height: R.h(context, 64),
                       decoration: BoxDecoration(
                         color: cardColor,
                         borderRadius: BorderRadius.circular(18),
@@ -177,9 +177,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: TextField(
                         controller: nameController,
                         textInputAction: TextInputAction.next,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
-                          fontSize: 17,
+                          fontSize: R.sp(context, 17),
                           fontWeight: FontWeight.w500,
                           letterSpacing: 0.5,
                         ),
@@ -188,30 +188,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           hintText: 'Name',
                           hintStyle: TextStyle(
                             color: Colors.white.withOpacity(0.35),
-                            fontSize: 16,
+                            fontSize: R.sp(context, 16),
                           ),
                           prefixIcon: Icon(
                             Icons.person_outline,
                             color: Colors.white.withOpacity(0.5),
-                            size: 22,
+                            size: R.w(context, 22),
                           ),
                           border: InputBorder.none,
-                          contentPadding: const EdgeInsets.symmetric(
+                          contentPadding: EdgeInsets.symmetric(
                             horizontal: 18,
-                            vertical: 19,
+                            vertical: R.h(context, 19),
                           ),
                         ),
                       ),
                     ),
 
-                    const SizedBox(height: 18),
+                    SizedBox(height: R.h(context, 18)),
 
                     _sectionTitle('Email address'),
 
-                    const SizedBox(height: 16),
+                    SizedBox(height: R.h(context, 16)),
 
                     Container(
-                      height: 64,
+                      height: R.h(context, 64),
                       decoration: BoxDecoration(
                         color: cardColor,
                         borderRadius: BorderRadius.circular(18),
@@ -224,9 +224,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         controller: emailController,
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
-                          fontSize: 17,
+                          fontSize: R.sp(context, 17),
                           fontWeight: FontWeight.w500,
                           letterSpacing: 0.5,
                         ),
@@ -235,23 +235,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           hintText: 'Email address',
                           hintStyle: TextStyle(
                             color: Colors.white.withOpacity(0.35),
-                            fontSize: 16,
+                            fontSize: R.sp(context, 16),
                           ),
                           prefixIcon: Icon(
                             Icons.email_outlined,
                             color: Colors.white.withOpacity(0.5),
-                            size: 22,
+                            size: R.w(context, 22),
                           ),
                           border: InputBorder.none,
-                          contentPadding: const EdgeInsets.symmetric(
+                          contentPadding: EdgeInsets.symmetric(
                             horizontal: 18,
-                            vertical: 19,
+                            vertical: R.h(context, 19),
                           ),
                         ),
                       ),
                     ),
 
-                    const SizedBox(height: 18),
+                    SizedBox(height: R.h(context, 18)),
 
                     // =====================================================
                     // NEXT BUTTON
@@ -259,7 +259,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                     SizedBox(
                       width: double.infinity,
-                      height: 62,
+                      height: R.h(context, 62),
                       child: ElevatedButton(
                         onPressed: _onNext,
                         style: ElevatedButton.styleFrom(
@@ -270,10 +270,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             borderRadius: BorderRadius.circular(32),
                           ),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Next',
                           style: TextStyle(
-                            fontSize: 18,
+                            fontSize: R.sp(context, 18),
                             fontWeight: FontWeight.w700,
                             letterSpacing: 1.2,
                           ),
@@ -281,7 +281,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
 
-                    const SizedBox(height: 42),
+                    SizedBox(height: R.h(context, 42)),
 
                     // =====================================================
                     // OR DIVIDER
@@ -317,7 +317,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ],
                     ),
 
-                    const SizedBox(height: 30),
+
+                    SizedBox(height: R.h(context, 30)),
 
                     // =====================================================
                     // GOOGLE
@@ -336,17 +337,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       },
                     ),
 
-                    const SizedBox(height: 14),
+                    SizedBox(height: R.h(context, 14)),
 
                     // =====================================================
                     // APPLE
                     // =====================================================
 
                     _socialButton(
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.apple,
                         color: Colors.white,
-                        size: 29,
+                        size: R.w(context, 29),
                       ),
                       text: 'Continue with Apple',
                       onTap: () async {
@@ -359,7 +360,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       },
                     ),
 
-                    const SizedBox(height: 58),
+
+                    SizedBox(height: R.h(context, 58)),
 
                     // =====================================================
                     // LOGIN
@@ -378,7 +380,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ),
                           ),
 
-                          const SizedBox(height: 14),
+                          SizedBox(height: R.h(context, 14)),
 
                           TextButton(
                             onPressed: () {

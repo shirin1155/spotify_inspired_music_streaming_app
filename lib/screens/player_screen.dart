@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
+import 'dart:math' as math;
 
+import '../utils/responsive.dart';
 import '../data/song_data.dart';
 import '../models/song.dart';
 import '../services/audio_player_service.dart';
@@ -92,7 +94,8 @@ class _PlayerScreenState extends State<PlayerScreen> {
               builder: (context, durationSnapshot) {
                 final duration = durationSnapshot.data ?? Duration.zero;
 
-                return Padding(
+                return SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Column(
                     children: [
@@ -116,10 +119,10 @@ class _PlayerScreenState extends State<PlayerScreen> {
                                 duration: const Duration(milliseconds: 400),
                                 switchInCurve: Curves.easeInOut,
                                 switchOutCurve: Curves.easeInOut,
-                                child: Text(
+                                  child: Text(
                                   'playing ${_currentSong.title}',
                                   key: ValueKey(_currentSong.title),
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 19,
                                   ),
@@ -146,7 +149,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 70),
+                          SizedBox(height: R.h(context, 70)),
                       AnimatedSwitcher(
                         duration: const Duration(milliseconds: 500),
                         switchInCurve: Curves.easeInOut,
@@ -159,7 +162,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
                               child: Image.asset(
                                 _currentSong.image,
                                 width: double.infinity,
-                                height: 430,
+                                    height: math.min(R.h(context, 430), MediaQuery.of(context).size.height * 0.5),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -191,7 +194,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
                           ],
                         ),
                       ),
-                      const SizedBox(height: 45),
+                      SizedBox(height: R.h(context, 45)),
                       AnimatedSwitcher(
                         duration: const Duration(milliseconds: 400),
                         switchInCurve: Curves.easeInOut,
@@ -205,18 +208,18 @@ class _PlayerScreenState extends State<PlayerScreen> {
                                 children: [
                                   Text(
                                     _currentSong.title,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 31,
+                                      fontSize: R.sp(context, 31),
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
-                                  const SizedBox(height: 8),
+                                  SizedBox(height: R.h(context, 8)),
                                   Text(
                                     _currentSong.artist,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: Colors.white70,
-                                      fontSize: 23,
+                                      fontSize: R.sp(context, 23),
                                     ),
                                   ),
                                 ],
@@ -240,7 +243,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
                           ],
                         ),
                       ),
-                      const SizedBox(height: 45),
+                      SizedBox(height: R.h(context, 45)),
                       SliderTheme(
                         data: SliderTheme.of(context).copyWith(
                           trackHeight: 5,
@@ -271,7 +274,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
                         children: [
                           Text(
                             _format(position),
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: Colors.white70,
                             ),
                           ),
@@ -283,7 +286,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
                           ),
                         ],
                       ),
-                      const Spacer(),
+                      // Removed Spacer to avoid layout overflow; scroll view handles small screens
                       StreamBuilder<bool>(
                         stream: audio.player.playingStream,
                         builder: (context, snapshot) {

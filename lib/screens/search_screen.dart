@@ -5,6 +5,7 @@ import '../models/song.dart';
 import 'player_screen.dart';
 import 'artist_screen.dart';
 import 'library_playlist_screen.dart';
+import '../utils/responsive.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -110,12 +111,12 @@ class _SearchScreenState extends State<SearchScreen> {
 
                   Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                         child: Text(
                           'Search',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 42,
+                            fontSize: R.sp(context, 42),
                             fontWeight: FontWeight.w800,
                             letterSpacing: -1.5,
                           ),
@@ -134,20 +135,20 @@ class _SearchScreenState extends State<SearchScreen> {
                             color: const Color(0xFF1ED760),
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: const Row(
+                          child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(
                                 Icons.workspace_premium_rounded,
-                                size: 16,
+                                size: R.w(context, 16),
                                 color: Colors.black,
                               ),
-                              SizedBox(width: 6),
+                              const SizedBox(width: 6),
                               Text(
                                 'Premium',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 12,
+                                  fontSize: R.sp(context, 12),
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
@@ -158,14 +159,14 @@ class _SearchScreenState extends State<SearchScreen> {
                     ],
                   ),
 
-                  const SizedBox(height: 28),
+                  SizedBox(height: R.h(context, 28)),
 
                   // =====================================================
                   // SEARCH BOX
                   // =====================================================
 
                   Container(
-                    height: 62,
+                    height: R.h(context, 62),
 
                     decoration: BoxDecoration(
                       color: const Color(0xFFF4F4F4),
@@ -178,19 +179,19 @@ class _SearchScreenState extends State<SearchScreen> {
 
                       onChanged: performSearch,
 
-                      style: const TextStyle(
+                        style: TextStyle(
                         color: Colors.black87,
-                        fontSize: 17,
+                        fontSize: R.sp(context, 17),
                         fontWeight: FontWeight.w500,
                       ),
 
                       decoration: InputDecoration(
                         border: InputBorder.none,
 
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.search_rounded,
                           color: Colors.black87,
-                          size: 32,
+                          size: R.w(context, 32),
                         ),
 
                         suffixIcon: isSearching
@@ -206,21 +207,21 @@ class _SearchScreenState extends State<SearchScreen> {
                         hintText:
                             'Artists, songs, or podcasts',
 
-                        hintStyle: const TextStyle(
+                        hintStyle: TextStyle(
                           color: Colors.black54,
                           fontSize: 17,
                           fontWeight: FontWeight.w600,
                         ),
 
                         contentPadding:
-                            const EdgeInsets.symmetric(
-                          vertical: 18,
+                            EdgeInsets.symmetric(
+                          vertical: R.h(context, 18),
                         ),
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: 34),
+                  SizedBox(height: R.h(context, 34)),
 
                   // =====================================================
                   // SEARCH RESULTS
@@ -232,14 +233,14 @@ class _SearchScreenState extends State<SearchScreen> {
                           ? 'No results'
                           : 'Search results',
 
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
-                        fontSize: 25,
+                        fontSize: R.sp(context, 25),
                         fontWeight: FontWeight.w700,
                       ),
                     ),
 
-                    const SizedBox(height: 18),
+                    SizedBox(height: R.h(context, 18)),
 
                     if (filteredSongs.isEmpty)
                       _buildNoResults()
@@ -256,15 +257,15 @@ class _SearchScreenState extends State<SearchScreen> {
                   else ...[
                     _buildRecentSearches(),
 
-                    const SizedBox(height: 48),
+                    SizedBox(height: R.h(context, 48)),
 
                     _buildPopularSongs(),
 
-                    const SizedBox(height: 24),
+                    SizedBox(height: R.h(context, 24)),
 
                     _buildPopularArtists(),
 
-                    const SizedBox(height: 48),
+                    SizedBox(height: R.h(context, 48)),
 
                     _buildBrowseAll(),
                   ],
@@ -285,17 +286,17 @@ class _SearchScreenState extends State<SearchScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'Recent searches',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 25,
+            fontSize: R.sp(context, 25),
             fontWeight: FontWeight.w700,
             letterSpacing: 1,
           ),
         ),
 
-        const SizedBox(height: 22),
+        SizedBox(height: R.h(context, 22)),
 
         Row(
           children: [
@@ -359,7 +360,7 @@ class _SearchScreenState extends State<SearchScreen> {
       },
 
       child: Container(
-        height: 175,
+        height: R.h(context, 175),
 
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
@@ -382,7 +383,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: Icon(
                   icon,
                   color: Colors.white70,
-                  size: 27,
+                  size: R.w(context, 27),
                 ),
               ),
 
@@ -393,21 +394,21 @@ class _SearchScreenState extends State<SearchScreen> {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
 
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
-                  fontSize: 20,
+                  fontSize: R.sp(context, 20),
                   fontWeight: FontWeight.w700,
                 ),
               ),
 
-              const SizedBox(height: 5),
+              SizedBox(height: R.h(context, 5)),
 
               Text(
                 subtitle,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
 
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white70,
                   fontSize: 13,
                 ),
@@ -445,7 +446,7 @@ class _SearchScreenState extends State<SearchScreen> {
         const SizedBox(height: 22),
 
         SizedBox(
-          height: 125,
+          height: R.h(context, 125),
 
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -476,7 +477,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
 
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white70,
                           fontSize: 12,
                         ),
@@ -527,7 +528,7 @@ class _SearchScreenState extends State<SearchScreen> {
         const SizedBox(height: 22),
 
         SizedBox(
-          height: 125,
+          height: R.h(context, 125),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: artists.map((a) {
@@ -568,7 +569,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
 
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white70,
                           fontSize: 12,
                         ),
@@ -653,7 +654,7 @@ class _SearchScreenState extends State<SearchScreen> {
       },
 
       child: Container(
-        height: 150,
+        height: R.h(context, 150),
 
         padding: const EdgeInsets.all(18),
 
@@ -666,9 +667,9 @@ class _SearchScreenState extends State<SearchScreen> {
           children: [
             Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 20,
+                fontSize: R.sp(context, 20),
                 fontWeight: FontWeight.w800,
               ),
             ),
@@ -733,7 +734,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
 
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -747,7 +748,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
 
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white60,
                       fontSize: 14,
                     ),
@@ -775,7 +776,7 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
 
       child: Column(
-        children: const [
+        children: [
           Icon(
             Icons.search_off_rounded,
             color: Colors.white38,
@@ -788,7 +789,7 @@ class _SearchScreenState extends State<SearchScreen> {
             'Nothing found',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 20,
+              fontSize: R.sp(context, 20),
               fontWeight: FontWeight.w600,
             ),
           ),

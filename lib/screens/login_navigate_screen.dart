@@ -23,7 +23,7 @@ class _LoginNavigateScreenState
 
   static const Color backgroundColor = Color(0xFF121212);
   static const Color cardColor = Color(0xFF1B1B1B);
-  static const Color borderColor = Color(0xFF414141);
+  // borderColor removed (unused)
   static const Color spotifyGreen = Color(0xFF1ED760);
 
   @override
