@@ -5,20 +5,28 @@
 A modern Spotify-inspired mobile music streaming application built with Flutter & Dart. This project focuses on recreating the Spotify mobile experience with a clean, responsive UI and essential music player features.
 
 		
-✨ Features
-🎵 Browse music and albums
-🔍 Search for songs and artists
-▶️ Play and pause songs
-⏭️ Next and previous track controls
-⏱️ Music progress/seek bar
-❤️ Like/favorite songs
-📂 Playlist support
-🎨 Spotify-inspired UI
-📱 Responsive mobile interface
+## ✨ Features
 
-🛠️ Technologies Used
-Flutter
-Dart
+- 🎵 Browse songs and albums
+- 🔍 Search for songs and artists
+- ▶️ Play and pause music
+- ⏭️ Next and previous track
+- 🎚️ Music progress / seek bar
+- 🔊 Volume control
+- ❤️ Like / favorite songs
+- 📂 Playlist support
+- 🎨 Spotify-inspired dark UI
+- 📱 Responsive mobile design
+- ⚡ Smooth and interactive user experience
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Usage |
+|------------|-------|
+| **Flutter** | Mobile app development |
+| **Dart** | Programming language |
 
 
 🚀 Getting Started
@@ -51,18 +59,8 @@ Run the application:
 
 flutter run
 
-📁 Project Structure
 
-assets/
-├── images/
 
-lib/
-├── data/
-├── models/
-├── screens/
-├── services/
-├── theme/
-├── widgets/
-└── main.dart
+
 
 
